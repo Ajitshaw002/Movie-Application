@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MoviesApp</string>
+    <string name="api_key">909594533c98883408adef5d56143539</string>
+    <string name="error_str">Something went wrong please try after some time</string>
+</resources>
