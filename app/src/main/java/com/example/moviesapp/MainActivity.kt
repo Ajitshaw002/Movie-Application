@@ -34,6 +34,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun App() {
+        //create the navigation Controller
         val navController = rememberNavController()
         NavHost(navController = navController, startDestination = "movieList") {
             composable(route = "movieList") {

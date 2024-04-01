@@ -27,9 +27,11 @@ android {
     buildTypes {
         debug {
             buildConfigField("String","API_BASE_URL","\"https://api.themoviedb.org/3/movie\"")
+            buildConfigField("String","IMAGE_BASE_URL","\"https://image.tmdb.org/t/p/w500/\"")
         }
         release {
             buildConfigField("String","API_BASE_URL","\"https://api.themoviedb.org/3/movie\"")
+            buildConfigField("String","IMAGE_BASE_URL","\"https://image.tmdb.org/t/p/w500/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -83,31 +85,13 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     //for  testing
     testImplementation("junit:junit:4.13.2")
-   // testImplementation("org.mockito:mockito-core:3.12.4")
-    // AndroidX Test - Core library
     testImplementation("androidx.test:core:1.5.0")
-
-    // AndroidX Test - LiveData testing
     testImplementation ("androidx.arch.core:core-testing:2.2.0")
-
-    // AndroidX Test - JUnit rules
-   // testImplementation ("androidx.test.ext:junit:1.1.5")
     testImplementation("io.mockk:mockk:1.12.0")
     testImplementation ("org.mockito:mockito-core:3.12.4")
     testImplementation("org.robolectric:robolectric:4.11.1")
-//    // For Robolectric tests.
-//    testImplementation("com.google.dagger:hilt-android-testing:2.44")
-//    // ...with Kotlin.
-//    kaptTest("com.google.dagger:hilt-android-compiler:2.44")
-//    // For instrumented tests.
-//    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
-//    // ...with Kotlin.
-//    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44")
-//
     testImplementation("org.powermock:powermock-module-junit4:2.0.9")
     testImplementation("org.powermock:powermock-api-mockito2:2.0.9")
-
-    ///
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))

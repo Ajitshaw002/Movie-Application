@@ -30,6 +30,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.bumptech.glide.integration.compose.placeholder
+import com.example.moviesapp.BuildConfig
 import com.example.moviesapp.helper.calculateUserScorePercentage
 import com.example.moviesapp.ui.AnimatedCircularProgressIndicator
 import com.example.moviesapp.ui.theme.GreenOr
@@ -78,7 +79,7 @@ fun MovieDetailScreen() {
                         }
                         Box {
                             GlideImage(
-                                model = "https://image.tmdb.org/t/p/w500/${detailState!!.backdrop_path}",
+                                model = "${BuildConfig.IMAGE_BASE_URL}${detailState!!.backdrop_path}",
                                 contentDescription = "Movie images",
                                 failure = placeholder(ColorPainter(Color.Red)),
                                 modifier = Modifier
@@ -97,7 +98,7 @@ fun MovieDetailScreen() {
                                 )
                             ) {
                                 GlideImage(
-                                    model = "https://image.tmdb.org/t/p/w500/${detailState!!.poster_path}",
+                                    model = "${BuildConfig.IMAGE_BASE_URL}${detailState!!.poster_path}",
                                     contentDescription = "Movie images",
                                     failure = placeholder(ColorPainter(Color.Red)),
                                     contentScale = ContentScale.Crop,
